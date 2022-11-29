@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animation</title>
+    <style media="screen">
+    body {
+      background: white;
+    }
+      .emoji {
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        position: relative;
+        background: url('images/emoji.png');
+        animation: emoji 1s ease alternate infinite;
+      }
+      .path {
+        width: 160px;
+        height: 160px;
+        display: block;
+        position: relative;
+        animation: path 4s linear alternate infinite;
+        }
+      .rotate {
+        animation: rotate 1s ease alternate infinite;
+        animation-play-state: paused;
+      }
+      .rotate:hover {
+        animation-play-state: running;
+      }
+  @keyframes emoji {
+    0% {background-position: 0 top;}
+    16% {background-position: -160px top;}
+    32% {background-position: -320px top;}
+    48% {background-position: -480px top;}
+    66% {background-position: -640px top;}
+    100% {background-position: -800px top;}
+  }
+  @keyframes path {
+    0%  {left: -160px; top: 200px;}
+    100%  {left: 100%; top: 200px;}
+  }
+  @keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+  }
+    </style>
+  </head>
+  <body>
+    <div class="path">
+      <div class="emoji rotate"></div>
+    </div>
+  </body>
+</html>
